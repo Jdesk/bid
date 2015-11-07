@@ -34,6 +34,6 @@ FROM node:0.10-onbuild
 ENV NODE_ENV=production \
     daemon=false \
     silent=false
-
+ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"]
 CMD node app --setup && npm start
 EXPOSE 4567
