@@ -1,4 +1,8 @@
-FROM buildpack-deps:trusty-scm # verify gpg and sha256: http://nodejs.org/dist/v0.10.31/SHASUMS256.txt.asc # gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>" # gpg: aka "Julien Gilli <jgilli@fastmail.fm>" RUN set -ex \
+FROM buildpack-deps:trusty-scm 
+# verify gpg and sha256: http://nodejs.org/dist/v0.10.31/SHASUMS256.txt.asc 
+# gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>" 
+# gpg: aka "Julien Gilli <jgilli@fastmail.fm>" 
+RUN set -ex \
 	&& for key in \
 		7937DFD2AB06298B2293C3187D33FF9D0246406D \
 		114F43EE0176B71C7BC219DD50A3051F888C628D \
@@ -15,16 +19,12 @@ ENV NODE_VERSION 0.10.40 ENV NPM_VERSION 2.14.1 RUN curl -SLO "https://nodejs.or
 	&& npm cache clear
 CMD [ "node" ]
 RUN apt-get update && apt-get install -y redis-server
-EXPOSE 6379 ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"] 
-FROM node:0.12-onbuild ENV NODE_ENV=production \ 
-daemon=false \ 
-silent=false 
+EXPOSE 6379 
+ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"] 
+FROM node:0.10-onbuild 
+ENV NODE_ENV=production \ 
+            daemon=false \ 
+            silent=false 
 ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"]
-EXPOSE 4567
-EXPOSE 80
-EXPOSE 443
 CMD node app --setup && npm start
-
-    Status API Training Shop Blog About Pricing 
-
-    © 2015 GitHub, Inc. Terms Privacy Security Contact Help 
+EXPOSE 4567
