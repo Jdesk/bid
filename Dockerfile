@@ -1,8 +1,4 @@
-FROM buildpack-deps:jessie
-
-# verify gpg and sha256: http://nodejs.org/dist/v0.10.31/SHASUMS256.txt.asc
-# gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>"
-# gpg: aka "Julien Gilli <jgilli@fastmail.fm>"
+FROM Ubuntu:latest
 RUN set -ex \
 	&& for key in \
 		7937DFD2AB06298B2293C3187D33FF9D0246406D \
@@ -25,11 +21,23 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 CMD [ "node" ]
 
-FROM node:0.10-onbuild
+FROM node:0.12-onbuild
+RUN cd /opt/nemesis
 
-ENV NODE_ENV=development \
+ENV NODE_ENV=production \
     daemon=false \
     silent=false
+VOLUME /opt/nemesis
 
+# Define working directory.
+WORKDIR /opt/nemesis
+
+# Expose ports
+EXPOSE 80
+EXPOSE 443
+EXPOSE 4567
+
+# Define default command.
+CMD ["node", "app.js"]
 CMD node app --setup && npm start
 EXPOSE 4567
