@@ -1,14 +1,14 @@
 {
-  "name": "nodebb",
+  "name": "nemesis",
   "license": "GPL-3.0",
-  "description": "NodeBB Forum",
-  "version": "0.8.2",
-  "homepage": "http://www.nodebb.org",
+  "description": "Nemesis Forum",
+  "version": "0.1",
+  "homepage": "http://www.mysimpleclouds.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/NodeBB/NodeBB/"
   },
-  "main": "app.js",
+  "main": "nemesis.js",
   "scripts": {
     "start": "node loader.js",
     "test": "mocha ./tests -t 10000"
@@ -81,15 +81,20 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "bugs": {
-    "url": "https://github.com/NodeBB/NodeBB/issues"
+    "url": "https://github.com/Jdesk/nemesis/issues"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=0.12"
   },
   "maintainers": [
     {
       "name": "Andrew Rodrigues",
       "email": "andrew@nodebb.org",
+      "url": "https://github.com/psychobunny"
+    },
+    {
+      "name": "James Barlow",
+      "email": "jamesbarlow@jurisdesk.com",
       "url": "https://github.com/psychobunny"
     },
     {
