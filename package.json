@@ -6,7 +6,7 @@
   "homepage": "http://www.mysimpleclouds.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NodeBB/NodeBB/"
+    "url": "https://github.com/jdesk/nemesis/"
   },
   "main": "nemesis.js",
   "scripts": {
