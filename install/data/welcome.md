@@ -5,6 +5,6 @@ To customise your forum, go to the [Administrator Control Panel](../../admin). Y
 
 ## Additional Resources
 
-* [NodeBB Documentation](https://docs.nodebb.org)
-* [Community Support Forum](https://community.nodebb.org)
-* [Project repository](https://github.com/nodebb/nodebb)
+* [NodeBB Documentation](http://nemesisbb.readthedocs.org/en/latest/)
+* [Community Support Forum](https://www.mysimpleclouds.com)
+* [Project repository](https://github.com/jdesk/nemesis)
