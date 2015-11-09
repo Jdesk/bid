@@ -1,4 +1,4 @@
-image: readytalk/nodejs
+image: ubuntu:latest
 script:
   - set -ex \
 	&& for key in \
