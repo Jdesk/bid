@@ -2,13 +2,13 @@
   "name": "nemesis",
   "license": "GPL-3.0",
   "description": "Nemesis Forum",
-  "version": "0.1",
+  "version": "0.8.2",
   "homepage": "http://www.mysimpleclouds.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/jdesk/nemesis/"
   },
-  "main": "nemesis.js",
+  "main": "app.js",
   "scripts": {
     "start": "node loader.js",
     "test": "mocha ./tests -t 10000"
