@@ -1,5 +1,3 @@
-echo "Phusion Passenger with a flare of NodeBB is Coming to a box near You"
-
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7 
 
 sudo apt-get install -y apt-transport-https ca-certificates
@@ -29,7 +27,3 @@ sudo ln -s /etc/nginx/sites-available/nodebb /etc/nginx/sites-enabled/nodebb
 cd /var/www/nemesis
 
 sudo npm install --production
-
-sudo npm start
-
-echo "please visit the above address to finish your install"
