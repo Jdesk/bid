@@ -18,9 +18,10 @@ ENV NODE_VERSION 0.10.40 ENV NPM_VERSION 2.14.1 RUN curl -SLO "https://nodejs.or
 	&& npm install -g npm@"$NPM_VERSION" \
 	&& npm cache clear
 CMD [ "node" ]
-RUN apt-get update && apt-get install -y redis-server
-EXPOSE 6379 
-ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"] 
+FROM        ubuntu:14.04
+RUN         apt-get update && apt-get install -y redis-server
+EXPOSE      6379
+ENTRYPOINT  ["/usr/bin/redis-server"]
 FROM node:0.10-onbuild 
 ENV NODE_ENV=production \ 
             daemon=false \ 
