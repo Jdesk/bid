@@ -7,8 +7,9 @@ FROM buildpack-deps:trusty-scm # verify gpg and sha256: http://nodejs.org/dist/v
 	done
 ENV NODE_VERSION 0.10.40 ENV NPM_VERSION 2.14.1 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \ && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \ && gpg --verify SHASUMS256.txt.asc \ && grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \ && tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \ && rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc \ && npm install -g npm@"$NPM_VERSION" \ && npm cache clear CMD [ "node" ]
-RUN apt-get update && apt-get install -y redis-server
-EXPOSE 6379 ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"] 
+RUN         apt-get update && apt-get install -y redis-server
+EXPOSE      6379
+ENTRYPOINT  ["/usr/bin/redis-server"]
 FROM node:0.10-onbuild ENV NODE_ENV=production \ daemon=false \ silent=false ENTRYPOINT ["/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"]
 CMD node app --setup && npm start
 EXPOSE 4567
