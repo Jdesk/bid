@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER NodeBB Docker Team <docker-devs@nodebb.org>
+MAINTAINER James Barlow <jamesbarlow@jurisdesk.com>
 
 # Install base packages
 RUN apt-get update
