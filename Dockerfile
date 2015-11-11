@@ -1,37 +1,33 @@
-FROM dockerfile/ubuntu
+FROM node:5.0.0-onbuild 
+RUN \
+  cd /tmp && \
+  wget http://download.redis.io/redis-stable.tar.gz && \
+  tar xvzf redis-stable.tar.gz && \
+  cd redis-stable && \
+  make && \
+  make install && \
+  cp -f src/redis-sentinel /usr/local/bin && \
+  mkdir -p /etc/redis && \
+  cp -f *.conf /etc/redis && \
+  rm -rf /tmp/redis-stable* && \
+  sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf && \
+  sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf && \
+  sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
+  sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
 
-#install redis
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install redis-server -y
-
-# Create a mountable volume
+# Define mountable directories.
 VOLUME ["/data"]
 
 # Define working directory.
 WORKDIR /data
 
-# Expose ports
+# Define default command.
+CMD ["redis-server", "/etc/redis/redis.conf"]
+
+# Expose ports.
 EXPOSE 6379
+ENV NODE_ENV=production \ 
+daemon=false \ 
+silent=false 
+CMD node app --setup && npm start EXPOSE 4567
 
-# Define default command.
-CMD ["redis-server"]
-
-# Install Node.js
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install nodejs-legacy -y
-RUN apt-get install npm -y
-RUN cd /opt && git clone https://github.com/NodeBB/NodeBB.git nodebb
-RUN cd /opt/nodebb && npm install
-RUN apt-get install imagemagick -y
-
-VOLUME /opt/nodebb
-
-# Define working directory.
-WORKDIR /opt/nodebb
-
-EXPOSE 4567
-
-# Define default command.
-CMD ["node", "app.js"]
