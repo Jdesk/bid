@@ -1,4 +1,11 @@
 machine:
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+dependencies:
+  override:
+    - npm install
   node:
     version: 4.2.2
   services:
@@ -6,10 +13,4 @@ machine:
     - elasticsearch
     - redis-server
     - mongodb
-    checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
-dependencies:
-  override:
-    - npm install
+    
