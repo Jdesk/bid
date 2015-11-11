@@ -4,7 +4,7 @@ MAINTAINER James Barlow <jamesbarlow@jurisdesk.com>
 # Install base packages
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install nodejs nodejs-legacy npm imagemagick git -y
+RUN apt-get install nodejs nodejs-legacy npm imagemagick git -y 
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -33,4 +33,4 @@ EXPOSE 443
 EXPOSE 4567
 
 # Define default command.
-CMD ["node", "app.js"]
+CMD ["npm install --production"]
