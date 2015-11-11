@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM node:5.0.0-onbuild
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r redis && useradd -r -g redis redis
@@ -45,7 +45,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 6379
 CMD [ "redis-server" ]
 
-FROM node:5.0.0-onbuild
+
 
 ENV NODE_ENV=production \
     daemon=false \
