@@ -6,11 +6,7 @@ checkout:
 dependencies:
   override:
     - npm install
-  node:
-    version: 4.2.2
   services:
-    - cassandra
-    - elasticsearch
     - redis-server
     - mongodb
     
