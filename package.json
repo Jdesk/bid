@@ -87,7 +87,7 @@
     "url": "https://github.com/jdesk/nemesis/issues"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=5.0.0"
   },
   "maintainers": [
     {
