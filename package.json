@@ -14,7 +14,7 @@
     "test": "mocha ./tests -t 10000"
   },
   "dependencies": {
-    "async": "~1.4.2",
+    "async": "~1.5.0",
     "bcryptjs": "~2.3.0",
     "body-parser": "^1.9.0",
     "colors": "^1.1.0",
@@ -30,8 +30,8 @@
     "express-session": "^1.8.2",
     "gravatar": "^1.1.0",
     "heapdump": "^0.3.0",
-    "html-to-text": "1.3.2",
-    "jimp": "^0.2.5",
+    "html-to-text": "1.4.0",
+    "jimp": "^0.2.19",
     "less": "^2.0.0",
     "logrotate-stream": "^0.2.3",
     "lru-cache": "^2.6.1",
@@ -53,8 +53,8 @@
     "nodebb-theme-persona": "4.0.32",
     "nodebb-theme-vanilla": "5.0.13",
     "nodebb-widget-essentials": "2.0.4",
-    "nodemailer": "0.7.1",
-    "npm": "^2.1.4",
+    "nodemailer": "1.9.0",
+    "npm": "^3.1.4",
     "passport": "^0.3.0",
     "passport-local": "1.0.0",
     "prompt": "^0.2.14",
@@ -71,7 +71,7 @@
     "string": "^3.0.0",
     "templates.js": "0.3.0",
     "toobusy-js": "^0.4.2",
-    "uglify-js": "^2.4.24",
+    "uglify-js": "^2.5.0",
     "underscore": "~1.8.3",
     "underscore.deep": "^0.5.1",
     "validator": "^4.0.5",
@@ -79,7 +79,7 @@
     "xregexp": "~3.0.0"
   },
   "devDependencies": {
-    "mocha": "~1.13.0",
+    "mocha": "~2.3.3",
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "^0.6.1"
   },
