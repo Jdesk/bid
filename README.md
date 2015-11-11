@@ -1,5 +1,7 @@
 # <img alt="NodeBB" src="http://i.imgur.com/mYxPPtB.png" />
 
+[![Join the chat at https://gitter.im/Jdesk/nemesis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Jdesk/nemesis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/NodeBB/NodeBB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/Jdesk/nemesis.svg?branch=master)](https://travis-ci.org/Jdesk/nemesis)
 [![Dependency Status](https://david-dm.org/jdesk/nemesis.svg)](https://david-dm.org/nodebb/nodebb)
