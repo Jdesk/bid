@@ -1,13 +1,13 @@
 FROM node:5.0.0-onbuild 
-RUN apt-get install -y redis-server
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install python-software-properties git imagemagick sed supervisor
+RUN add-apt-repository -y ppa:rwky/redis
+RUN apt-get update && apt-get install -y redis-server
 
-# Define mountable directories.
 VOLUME ["/data"]
 
-# Define working directory.
 WORKDIR /data
 
-# Define default command.
 CMD ["redis-server", "/etc/redis/redis.conf"]
 
 # Expose ports.
