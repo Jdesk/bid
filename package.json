@@ -84,7 +84,7 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "bugs": {
-    "url": "https://github.com/NodeBB/NodeBB/issues"
+    "url": "https://github.com/jdesk/nemesis/issues"
   },
   "engines": {
     "node": ">=0.10"
@@ -94,6 +94,11 @@
       "name": "Andrew Rodrigues",
       "email": "andrew@nodebb.org",
       "url": "https://github.com/psychobunny"
+    },
+    {
+      "name": "James Barlow",
+      "email": "james@phillymozdesign.com",
+      "url": "https://github.com/jdesk"
     },
     {
       "name": "Julian Lam",
