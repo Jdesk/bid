@@ -1,4 +1,4 @@
-FROM node:5.0.0-onbuild
+FROM buildpack-deps wheezy-scm
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r redis && useradd -r -g redis redis
@@ -39,14 +39,9 @@ RUN mkdir /data && chown redis:redis /data
 VOLUME /data
 WORKDIR /data
 
-COPY docker-entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-
 EXPOSE 6379
 CMD [ "redis-server" ]
-
-
-
+RUN node:5.0.0-onbuild
 ENV NODE_ENV=production \
     daemon=false \
     silent=false
