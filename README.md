@@ -1,7 +1,7 @@
 [![Join the chat at https://gitter.im/Jdesk/nemesis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Jdesk/nemesis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/Jdesk/nemesis.svg?branch=master)](https://travis-ci.org/Jdesk/nemesis)
-[![Dependency Status](https://david-dm.org/jdesk/nemesis.svg)](https://david-dm.org/nodebb/nodebb)
+[![Dependency Status](https://david-dm.org/jdesk/nemesis.svg)](https://david-dm.org/jdesk/nemesis)
 
 [**NodeBB Forum Software**](https://nodebb.org) is powered by Node.js and built on either a Redis or MongoDB database. It utilizes web sockets for instant interactions and real-time notifications. NodeBB has many modern features out of the box such as social network integration and streaming discussions, while still making sure to be compatible with older browsers.
 
