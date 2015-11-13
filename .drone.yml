@@ -27,9 +27,6 @@ script:
 services:
   - redis
 notify:
-  email:
-    recipients:
-      - james@jurisdesk.com
   webhook:
     urls:
       - https://webhooks.gitter.im/e/738cec25e34bafb2650f
