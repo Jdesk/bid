@@ -10,8 +10,6 @@ RUN sudo apt-get install -y nodejs
 RUN sudo apt-get install -y build-essential
 RUN add-apt-repository -y ppa:chris-lea/redis-server
 RUN apt-get update && apt-get dist-upgrade
-RUN npm cache clear
-RUN rm -fr node_modules
 WORKDIR /src
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 4.x
