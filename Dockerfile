@@ -2,36 +2,28 @@ FROM ubuntu:14.04
 
 MAINTAINER James Barlow <james@jurisdesk.com>
 
-# Install Redis
-RUN   \
-  apt-get -y -qq install python redis-server
+RUN apt-get update
+# some node modules (e.g. zmq) need python to install properly
+RUN apt-get install -y software-properties-common python
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
+RUN sudo apt-get install -y build-essential
+RUN add-apt-repository -y ppa:chris-lea/redis-server
+RUN apt-get update && apt-get dist-upgrade
 
-# Install Node
-RUN   \
-  cd /opt && \
-  wget http://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-x64.tar.gz && \
-  tar -xzf node-v4.2.2-linux-x64.tar.gz && \
-  mv node-v4.2.2-linux-x64 node && \
-  cd /usr/local/bin && \
-  ln -s /opt/node/bin/* . && \
-  rm -f /opt/node-v4.2.2-linux-x64.tar.gz
+RUN npm install -g express
+WORKDIR /src
 
-# Set the working directory
-WORKDIR   /src
+RUN rm -fr node_modules
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 4.2.2
-
-CMD [ "node" ]
-
+ENV NODE_VERSION 4.x
 ENV NODE_ENV=production \ 
 daemon=false \ 
 silent=false 
 CMD node app --setup && npm start 
 EXPOSE 4567
 EXPOSE 80
-EXPOSE 443
-
-CMD ["/bin/bash"]
+#EXPOSE 443 -- if using ssl uncomment
 
 
