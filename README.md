@@ -2,19 +2,18 @@
 
 [![Build Status](https://travis-ci.org/Jdesk/nemesis.svg?branch=master)](https://travis-ci.org/Jdesk/nemesis)
 [![Dependency Status](https://david-dm.org/jdesk/nemesis.svg)](https://david-dm.org/jdesk/nemesis)
-[![Build Status](https://semaphoreci.com/api/v1/projects/f91c77de-37f4-4b7f-859c-eb62b4ee635a/601483/badge.svg)](https://semaphoreci.com/jbthechamp/nemesis)
 [**NodeBB Forum Software**](https://nodebb.org) is powered by Node.js and built on either a Redis or MongoDB database. It utilizes web sockets for instant interactions and real-time notifications. NodeBB has many modern features out of the box such as social network integration and streaming discussions, while still making sure to be compatible with older browsers.
 
 Additional functionality is enabled through the use of third-party plugins.
 
-* [Get NodeBB](http://www.nodebb.org/ "NodeBB")
-* [Demo & Meta Discussion](http://community.nodebb.org)
+* [Get NodeBB](http://www.nodebb.org/ "NodeBB official Homepage")
+* [Demo & Meta Discussion](http://www.mysimpleclouds.com)
 * [Documentation & Installation Instructions](http://docs.nodebb.org)
 * [Help translate NodeBB](https://www.transifex.com/projects/p/nodebb/)
 * [NodeBB Blog](http://blog.nodebb.org)
 * [Join us on IRC](https://kiwiirc.com/client/irc.freenode.net/nodebb) - #nodebb on Freenode
-* [Follow us on Twitter](http://www.twitter.com/NodeBB/ "NodeBB Twitter")
-* [Like us on Facebook](http://www.facebook.com/NodeBB/ "NodeBB Facebook")
+* [Follow us on Twitter](http://www.twitter.com/carlcdavid/ "James B. Twitter")
+* [Like us on Facebook](http://www.facebook.com/jurisdesk/ "James B. Facebook")
 
 ## Screenshots
 
