@@ -1,4 +1,4 @@
-FROM docker/ubuntu
+FROM ubuntu:14.04
 
 MAINTAINER James Barlow <james@jurisdesk.com>
 
